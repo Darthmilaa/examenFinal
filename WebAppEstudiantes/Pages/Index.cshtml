@@ -1,0 +1,57 @@
+﻿@page
+@model WebAppEstudiantes.Pages.IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lista de Estudiantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #b1d5a3;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Estudiantes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Correo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var estudiante in Model.EstudiantesList)
+            {
+                <tr>
+                    <td>@estudiante.ID</td>
+                    <td>@estudiante.Nombre</td>
+                    <td>@estudiante.Apellido</td>
+                    <td>@estudiante.Edad</td>
+                    <td>@estudiante.Correo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
